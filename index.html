@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmys Rafael</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        *{
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: .2s linear;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+        }
+        .container {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(image/fundo-jimmys.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .card {
+            height: 470px;
+            width: 350px;
+            text-align: center;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .3)
+        }
+
+        .card img {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 60px;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, .2),
+                        0 15px 100px rgba(0,0,0, .3);
+        }
+        .card h3 {
+            margin-top: 15px;
+            padding: 5px 0;
+            font-size: 25px;
+            color: #fff;
+        }
+        .card .post {
+            color: #eee;
+        }
+        .card .icons {
+            margin: 25px 0;
+        }
+        .card .icons a {
+            margin: 0 5px;
+            font-size: 20px;
+            color: #fff;
+        }
+        .card .icons a:hover {
+            transform: scale(1.4);
+        }
+        .card button {
+            border-radius: 50px;
+            border: 2px solid #fff;
+            color: #fff;
+            background: none;
+            outline: none;
+            margin: 0 2px;
+            cursor: pointer;
+            height: 40px;
+            width: 140px;
+            font-size: 15px;
+        }
+        .card button:hover {
+            background: #fff;
+            color: #333;
+        }
+        .card .shares {
+            margin-top: 40px;
+        }
+        .card .shares .counter {
+            font-size: 20px;
+            margin: 0 5px;
+            color: #fff;
+        }
+        .card .shares .counter:nth-child(2) {
+            padding: 5px 15px;
+            border: 1px solid #eee;
+            border-top: none;
+            border-bottom: none;
+        }
+        .card .shares .counter .count {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="image/jimmys.png" alt="Jimmys Rafael">
+            <h3>Jimmys Rafael</h3>
+            <span class="post">Desenvolvedor Web</span>
+            <div class="icons">
+                <a href="https://web.facebook.com/profile.php?id=100072632794731" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/jimmysrafael" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/jimmysrafael/" class="fab fa-instagram"></a>
+                <a href="https://www.youtube.com/channel/UCqB-fSp5et4daJsM2lhCDRw" class="fab fa-youtube"></a>
+            </div>
+            <a href="mailto:jimmys.rafael@gmail.com"><button>E-mail</button></a>
+            <a href="https://github.com/jimmysrafael"><button>GitHub</button></a>
+            <div class="shares">
+                <a href="#" class="counter"> <i class="fas fa-heart"></i> <span class="count">1000</span></a>
+                <a href="#" class="counter"> <i class="fas fa-share"></i> <span class="count">1500</span></a>
+                <a href="#" class="counter"> <i class="fas fa-comment"></i> <span class="count">850</span></a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.count').each(function(){
+                $(this).prop('counter', 0).animate({
+                    Counter : $(this).text()
+                }, {
+                    duration : 3500, 
+                    easing : 'swing',
+                    step : function (now) {
+                        $(this).text(Math.ceil(now) + '+');
+                    }
+                })
+            })
+        });
+    </script>
+</body>
+</html>
